@@ -20,5 +20,22 @@ console.log('funguju');
 const goodbye = (jmeno) => {
   const closing = document.querySelector('.email__closing');
   console.log('Pořád funguju??');
-  return (closing.textContent = `S pozdravem ${jmeno}`);
+  closing.textContent = `S úctou ${jmeno}`;
+};
+
+// Pokračujte na stránce z přechozího příkladu.
+
+// Do souboru index.js přidejte funkci fillSubject s jedním parametrem subject. Tato funkce ze stránky vybere DOM element představující předmět e-mailu a nastaví jeho obsah na řetězec, který přišel v parametru. Zavolejte funkci z konzole a vykoušejte si nastavit předmět e-mailu na různé řetězce.
+// Napište funkci fillBody s jedním parametrem body, která ze stránky vybere DOM element představující tělo e-mailu a nastaví jeho obsah dle hodnoty parametru. Funkci vyzkoušejte v konzoli.
+// Z předchozího cvičení nám zůstala funkce goodbye. Do funkce fillBody přidejte další parametr s názvem name. Tento parametr bude představovat jméno odesílatele. Funkce vyplní tělo e-mailu a do elementu email__closing vloží pozdrav, který vyrobí pomocí volání funkce goodbye.
+
+const fillSubject = (subject) => {
+  const emailSubject = document.querySelector('.email__subject');
+  emailSubject.textContent = subject;
+};
+
+const fillBody = (body, name) => {
+  const emailBody = document.querySelector('.email__body');
+  emailBody.textContent = body;
+  name = goodbye;
 };
